@@ -15,6 +15,29 @@ defineProps<{
           class="menu-mobile__header flex justify-between items-center text-zinc-900 cursor-pointer"
         >
           <div>Testando</div>
+
+          <div>
+            <ArrowUpRightIcon class="text-amber-500" :size="18" />
+          </div>
+        </div>
+      </div>
+      <div class="menu-mobile__wrapper !p-4 w-full border-b border-zinc-300">
+        <div
+          class="menu-mobile__header flex justify-between items-center text-zinc-900 cursor-pointer"
+        >
+          <div>Testando</div>
+
+          <div>
+            <ArrowUpRightIcon class="text-amber-500" :size="18" />
+          </div>
+        </div>
+      </div>
+      <div class="menu-mobile__wrapper !p-4 w-full border-b border-zinc-300">
+        <div
+          class="menu-mobile__header flex justify-between items-center text-zinc-900 cursor-pointer"
+        >
+          <div>Testando</div>
+
           <div>
             <ArrowUpRightIcon class="text-amber-500" :size="18" />
           </div>
