@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Code, PenTool, Video, VideoIcon } from 'lucide-vue-next'
 import SkillCard from './SkillCard.vue'
 
 import Container from '../layout/Container.vue'
