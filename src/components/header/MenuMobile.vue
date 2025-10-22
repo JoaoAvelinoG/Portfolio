@@ -19,14 +19,14 @@ function handleClick(refName: string) {
 </script>
 
 <template>
-  <Container class="!px-7 flex lg:hidden justify-end relative z-50">
+  <Container class="!px-4 flex lg:hidden justify-end relative z-50">
     <div
       :class="[
-        'menu-mobile fixed top-16 right-0 bg-white shadow-xl rounded-l-xl overflow-hidden',
+        'menu-mobile text-sm fixed top-16 right-0 bg-white shadow-xl rounded-l-xl overflow-hidden',
         isOpen ? 'w-full max-w-xs opacity-100 translate-x-0' : 'w-0 opacity-0 -translate-x-full',
       ]"
     >
-      <div class="flex flex-col divide-y divide-zinc-200 !p-8">
+      <div class="flex flex-col divide-y divide-zinc-200 !p-3">
         <div
           v-for="link in links"
           :key="link.refName"

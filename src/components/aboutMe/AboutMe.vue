@@ -10,9 +10,9 @@ const props = defineProps<{
 </script>
 
 <template>
-  <section :class="['!px-4 !mt-24 md:!px-0', props.class]">
+  <section :class="['!px-2 !mt-8 md:!mt-24 !mb-4 md:!px-0', props.class]">
     <Container>
-      <div class="about-me__wrapper flex justify-center !px-16 md:!px-10">
+      <div class="about-me__wrapper flex justify-center !px-2 md:!px-10">
         <div class="about-me__content flex justify-center items-center md:gap-30 w-full">
           <div
             class="profile-pi hidden lg:block max-w-[320px] max-h-[320px] md:max-w-[420px] md:max-h-[420px]"
@@ -21,20 +21,28 @@ const props = defineProps<{
           </div>
           <div class="about-me__infos flex">
             <div class="!mt-4 !mb-4 md:!mt-8 md:!mb-8">
-              <h1 class="text-3xl md:text-6xl text-center md:text-start font-bold text-[#f1f1f1]">
+              <h1 class="text-2xl md:text-5xl text-center md:text-start font-bold text-[#f1f1f1]">
                 Sobre Mim
               </h1>
-              <h3 class="text-base md:text-2xl text-center md:text-start !mt-2 text-[#F7B32B]">
+              <h3 class="text-base md:text-lg text-center md:text-start !mt-2 text-[#F7B32B]">
                 Apaixonado por Códigos! Por JS e TS🩵.
               </h3>
               <div class="!mt-6">
-                <ul class="flex flex-col gap-3 text-[#D7D6FF] text-center md:text-start">
-                  <li class="text-base">Tecnólogo em Análise e Desenvolvimento de Sitemas.</li>
-                  <li class="text-base">Tecnólogo em Design Gráfico pela Cruzeiro do Sul.</li>
-                  <li class="text-base">Técnico em Informática pelo IF Sul de Minas.</li>
-                  <li class="text-base">Estudante de Node nas horas vagas!</li>
+                <ul class="flex flex-col gap-8 md:gap-4 text-[#D7D6FF] text-center md:text-start">
+                  <li class="text-sm md:text-base">
+                    - Tecnólogo em Análise e Desenvolvimento de Sitemas.
+                  </li>
+                  <li class="text-sm md:text-base">
+                    - Tecnólogo em Design Gráfico pela Cruzeiro do Sul.
+                  </li>
+                  <li class="text-sm md:text-base">
+                    - Técnico em Informática pelo IF Sul de Minas.
+                  </li>
+                  <li class="text-sm md:text-base">- Estudante de Node nas horas vagas!</li>
                 </ul>
-                <div class="social-media-links flex justify-center md:justify-start gap-4 !mt-8">
+                <div
+                  class="social-media-links flex justify-center md:justify-start gap-4 !mt-8 md:!mt-12"
+                >
                   <a
                     href="https://www.linkedin.com/in/jg-avelino/"
                     target="_blank"

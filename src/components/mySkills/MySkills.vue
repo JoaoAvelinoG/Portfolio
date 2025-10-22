@@ -18,9 +18,11 @@ import PHP from '../../assets/svg/PHP.vue'
 </script>
 <template>
   <Container>
-    <h1 class="text-center font-medium text-xl md:text-2xl !mb-22">Minhas Habilidades:</h1>
+    <h1 class="text-center font-medium text-xl md:text-2xl !mb-12 md:!mb-22">
+      Minhas Habilidades:
+    </h1>
     <div
-      class="grid place-items-center grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-12 !px-8"
+      class="grid place-items-center grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-12 !px-8"
     >
       <SkillCard skillTitle="React" :icon="ReactLogo" />
       <SkillCard skillTitle="Vue 3" :icon="VueLogo" />
@@ -33,10 +35,8 @@ import PHP from '../../assets/svg/PHP.vue'
       <SkillCard skillTitle="Node (Básico)" :icon="NodeLogo" />
       <SkillCard skillTitle="Bootstrap" :icon="Bootstrap" />
 
-      <div class="col-span-full flex justify-center gap-64 md:gap-36">
-        <SkillCard skillTitle="Figma" :icon="Figma" />
-        <SkillCard skillTitle="PHP (Básico)" :icon="PHP" />
-      </div>
+      <SkillCard skillTitle="Figma" :icon="Figma" />
+      <SkillCard skillTitle="PHP (Básico)" :icon="PHP" />
     </div>
   </Container>
 </template>
