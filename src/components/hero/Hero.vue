@@ -6,7 +6,7 @@ import Typer from './Typer.vue'
 import { DownloadIcon } from 'lucide-vue-next'
 import { computed } from 'vue'
 
-const cvPath = '/Curriculo_Joao_att.pdf'
+const cvPath = '/Curriculo_Joao_Site.pdf'
 
 const linkZap = computed(() => {
   return `https://wa.me/${import.meta.env.VITE_PUBLIC_ZAP}`
