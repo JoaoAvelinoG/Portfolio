@@ -26,7 +26,7 @@ const attrs = useAttrs()
       attrs.class,
     ]"
   >
-    <div class="workedIn__wrapper flex flex-col items-center md:flex-row gap-4 !p-12">
+    <div class="workedIn__wrapper flex flex-col items-center 2xl:flex-row gap-4 !p-12">
       <div class="workedIn__image w-30 h-30">
         <img
           :src="props.enterpriseImg ? props.enterpriseImg : 'https://placehold.co/400'"
@@ -44,7 +44,7 @@ const attrs = useAttrs()
           {{ props.enterpriseName }}
         </div>
 
-        <div class="workedIn__card-description w-full md:w-[400px] text-gray-700 text-sm">
+        <div class="workedIn__card-description w-full lg:w-[400px] text-gray-700 text-sm">
           {{ props.enterpriseDescription }}
         </div>
       </div>

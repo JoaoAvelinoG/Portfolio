@@ -16,7 +16,7 @@ import ImediaLogo from '../../assets/images/Logo_Imedia.png'
         Profissionais:
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 !px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 !px-22 !md:px-12">
         <WorkedIn
           class="px-12 bg-black"
           :startIn="2023"
@@ -52,14 +52,15 @@ import ImediaLogo from '../../assets/images/Logo_Imedia.png'
           :enterpriseImg="PocoFundoLogo"
           enterpriseDescription="Tarefas administrativas variadas, como atendimento interno, arquivamento, digitalização e atualização de documentos."
         />
-
-        <WorkedIn
-          class="p-20 bg-black"
-          :startIn="2016"
-          :ended="2017"
-          enterpriseName="Estagiário - PC&CIA"
-          enterpriseDescription="Manutenção preventiva e corretiva de computadores, limpeza de hardware, formatação de sistemas, remoção de malwares e suporte técnico domiciliar."
-        />
+        <div class="col-span-full flex justify-center place-items-center">
+          <WorkedIn
+            class="p-20 bg-black"
+            :startIn="2016"
+            :ended="2017"
+            enterpriseName="Estagiário - PC&CIA"
+            enterpriseDescription="Manutenção preventiva e corretiva de computadores, limpeza de hardware, formatação de sistemas, remoção de malwares e suporte técnico domiciliar."
+          />
+        </div>
       </div>
     </div>
   </Container>

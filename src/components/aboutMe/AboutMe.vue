@@ -10,10 +10,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <section :class="['!px-4 md:!px-0', props.class]">
+  <section :class="['!px-4 !mt-24 md:!px-0', props.class]">
     <Container>
       <div class="about-me__wrapper flex justify-center !px-16 md:!px-10">
-        <div class="about-me__content flex items-center gap-90 w-full">
+        <div class="about-me__content flex justify-center items-center md:gap-30 w-full">
           <div
             class="profile-pi hidden lg:block max-w-[320px] max-h-[320px] md:max-w-[420px] md:max-h-[420px]"
           >
@@ -25,7 +25,7 @@ const props = defineProps<{
                 Sobre Mim
               </h1>
               <h3 class="text-base md:text-2xl text-center md:text-start !mt-2 text-[#F7B32B]">
-                Apaixonado por Códigos! E por JS.
+                Apaixonado por Códigos! Por JS e TS🩵.
               </h3>
               <div class="!mt-6">
                 <ul class="flex flex-col gap-3 text-[#D7D6FF] text-center md:text-start">
@@ -36,17 +36,23 @@ const props = defineProps<{
                 </ul>
                 <div class="social-media-links flex justify-center md:justify-start gap-4 !mt-8">
                   <a
+                    href="https://www.linkedin.com/in/jg-avelino/"
+                    target="_blank"
                     class="cursor-pointer inline-flex justify-center items-center h-[46px] w-[46px] bg-[#f1f1f1] rounded-full"
                   >
                     <LinkedinIcon />
                   </a>
                   <a
+                    href="https://github.com/JoaoAvelinoG"
+                    target="_blank"
                     class="cursor-pointer inline-flex justify-center items-center h-[46px] w-[46px] bg-[#f1f1f1] rounded-full"
                   >
                     <GithubIcon />
                   </a>
 
                   <a
+                    href="https://www.instagram.com/jaoag1/"
+                    target="_blank"
                     class="cursor-pointer inline-flex justify-center items-center h-[46px] w-[46px] bg-[#f1f1f1] rounded-full"
                   >
                     <InstagramIcon />

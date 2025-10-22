@@ -62,7 +62,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <span class="text-zinc-500">
+  <span class="text-[#f1f1f1]">
     {{ displayText }}
   </span>
   <span class="ml-1 border-r-2 border-indigo-600 animate-pulse"></span>

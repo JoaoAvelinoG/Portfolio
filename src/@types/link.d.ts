@@ -1,4 +1,4 @@
 export interface Link {
   title: string
-  url: string
+  refName: 'homeRef' | 'aboutRef' | 'experiencesRef' | 'skillsRef'
 }

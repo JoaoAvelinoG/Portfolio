@@ -4,11 +4,18 @@ import Button from '../commons/button/Button.vue'
 import Typer from './Typer.vue'
 
 import { DownloadIcon } from 'lucide-vue-next'
+import { computed } from 'vue'
+
+const cvPath = '/Curriculo_Joao_att.pdf'
+
+const linkZap = computed(() => {
+  return `https://wa.me/${import.meta.env.VITE_PUBLIC_ZAP}`
+})
 </script>
 
 <template>
-  <Container class="!px-8 h-[calc(100vh-220px)] md:h-[calc(100vh-80px)]">
-    <section class="flex h-full !mt-30 md:!mt-60">
+  <Container class="!px-8 h-[calc(100vh-220px)] md:h-[calc(100vh-90px)]">
+    <section class="flex items-center h-full md:!mt-10 !pb-12">
       <div class="flex flex-col items-start gap-4">
         <div class="hello-area inline-flex justify-center items-center gap-3 !mb-4">
           <div class="!py-0.3 !px-3 md:!px-4 rounded-sm bg-zinc-800">
@@ -17,7 +24,7 @@ import { DownloadIcon } from 'lucide-vue-next'
         </div>
         <div class="name-area flex flex-col justify-center items-start gap-3">
           <div>
-            <h1 class="text-6xl md:text-7xl font-semibold">
+            <h1 class="text-[#f1f1f1] text-6xl md:text-7xl font-semibold">
               João Guilherme<span class="text-indigo-500">.</span>🖖🏼
             </h1>
           </div>
@@ -26,11 +33,15 @@ import { DownloadIcon } from 'lucide-vue-next'
           </div>
         </div>
         <div class="cta-area flex gap-4 !mt-4">
-          <Button>Fale Comigo</Button>
-          <Button class="flex items-center justify-center gap-4" variant="outline">
-            <DownloadIcon :size="18" />
-            <span class="text-base">Baixe meu CV</span>
-          </Button>
+          <a :href="linkZap" target="_blank" rel="noopener noreferrer">
+            <Button>Fale Comigo</Button>
+          </a>
+          <a :href="cvPath" download>
+            <Button class="flex items-center justify-center gap-4" variant="outline">
+              <DownloadIcon color="#615FFF" :size="18" />
+              <span class="text-base">Baixe meu CV</span>
+            </Button>
+          </a>
         </div>
       </div>
     </section>

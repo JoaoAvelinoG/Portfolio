@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import MenuMobile from './MenuMobile.vue'
-
-import { useDevice } from '../../composables/useDevice'
-
-import type { Link } from '../../@types/link'
-
-import { MenuIcon } from 'lucide-vue-next'
-import { XIcon } from 'lucide-vue-next'
 import { ref } from 'vue'
+import { useDevice } from '../../composables/useDevice'
+import { MenuIcon } from 'lucide-vue-next'
 import Container from '../layout/Container.vue'
 import Logo from '../commons/logo/Logo.vue'
+import type { Link } from '../../@types/link'
+import MenuMobile from './MenuMobile.vue'
 
 const { isMobile, isTablet, isDesktop } = useDevice()
-
 const isOpen = ref(false)
 const toggleMenu = () => (isOpen.value = !isOpen.value)
 
@@ -20,53 +15,48 @@ const props = defineProps<{
   class?: string
   links: Link[]
 }>()
+
+const emit = defineEmits<{
+  (e: 'scroll-to', refName: string): void
+}>()
+
+// Função para clicar no menu mobile
+function handleMobileScroll(refName: string) {
+  emit('scroll-to', refName) // envia para o pai (App.vue)
+  isOpen.value = false // fecha o menu
+}
 </script>
 
 <template>
-  <!-- Header -->
-  <header :class="['!px-4 md:!px-0', props.class]">
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <Container>
       <div class="header !py-2 !px-4 md:!px-8">
         <div class="header-wrapper flex justify-between items-center">
           <div class="logo">
             <Logo />
           </div>
+
           <!-- Menu Desktop -->
           <div v-if="isDesktop" class="links flex gap-8 text-zinc-500">
-            <a class="font-light" v-for="link in props.links" :key="link.title" :href="link.url">
+            <button
+              v-for="link in props.links"
+              :key="link.title"
+              class="font-light cursor-pointer hover:text-indigo-500 transition bg-transparent border-none"
+              @click="emit('scroll-to', link.refName)"
+            >
               {{ link.title }}
-            </a>
+            </button>
           </div>
 
           <!-- Menu Mobile -->
           <div v-if="isMobile || isTablet">
-            <transition name="icon-fade" mode="out-in">
-              <MenuIcon v-if="!isOpen" key="menu" class="cursor-pointer" @click="toggleMenu" />
-              <XIcon v-else key="close" class="cursor-pointer" @click="toggleMenu" />
-            </transition>
+            <MenuIcon @click="toggleMenu" class="cursor-pointer" />
           </div>
         </div>
       </div>
     </Container>
-  </header>
-  <!-- Modal Menu Mobile -->
-  <MenuMobile :isOpen="isOpen" />
-</template>
 
-<style scoped>
-/* Se você quiser manter a transição de fade para outros ícones */
-.icon-fade-enter-active,
-.icon-fade-leave-active {
-  transition: transform 0.2s ease, opacity 0.1s ease;
-}
-.icon-fade-enter-from,
-.icon-fade-leave-to {
-  transform: scale(0);
-  opacity: 0.3;
-}
-.icon-fade-enter-to,
-.icon-fade-leave-from {
-  transform: scale(1);
-  opacity: 1;
-}
-</style>
+    <!-- Menu Mobile -->
+    <MenuMobile :isOpen="isOpen" :links="props.links" @scroll-to="handleMobileScroll" />
+  </header>
+</template>
