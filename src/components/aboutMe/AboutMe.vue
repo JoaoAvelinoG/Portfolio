@@ -20,7 +20,7 @@ const props = defineProps<{
             <img class="rounded-md" src="../../assets//images/João.jpg" alt="" />
           </div>
           <div class="about-me__infos flex">
-            <div class="!mt-4 !mb-4 md:!mt-8 md:!mb-8">
+            <div class="!mb-4 md:!mt-8 md:!mb-8">
               <h1 class="text-2xl md:text-5xl text-center md:text-start font-bold text-[#f1f1f1]">
                 Sobre Mim
               </h1>
